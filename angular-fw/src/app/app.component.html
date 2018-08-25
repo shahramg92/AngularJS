@@ -1,4 +1,9 @@
   <h1>
     Welcome {{ name }}!
   </h1>
+  <p *ngIf="name != 'Shahram'">Name updated!</p>
   <button (click)="onChangeName()">Change Name</button>
+  <button (click)="onAddElement()">New Element</button>
+  <ul>
+    <li *ngFor="let el of elements">Element {{ el}}</li>
+  </ul>

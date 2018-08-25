@@ -6,9 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = 'Shahram'
+  name = 'Shahram';
+  elements: number[] = [];
 
   onChangeName() {
     this.name = "Bob";
+  }
+
+  onAddElement() {
+    this.elements.push(this.elements.length + 1);
   }
 }
