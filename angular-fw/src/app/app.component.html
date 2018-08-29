@@ -1,4 +1,7 @@
-<app-username></app-username>
+<app-username [username]="'Chris'" (userClicked)="onUserwasClicked($event)">
+</app-username>
+<app-username [username]="'Anna'" (userClicked)="onUserwasClicked($event)">
+</app-username>
 <h1 [ngClass]="{updated: name != 'Shahram'}">
   Welcome {{ name }}!
 </h1>
@@ -11,3 +14,5 @@
       [ngStyle]="{backgroundColor: getColor(el)}"
       >Element {{ el }}</li>
 </ul>
+<input type="text" [(ngModel)]="message">
+<p>{{ message }}</p>
