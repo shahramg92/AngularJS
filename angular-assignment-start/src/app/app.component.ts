@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  hobbies: string[] = ['Cooking', 'Sports'];
+  newHobbyInput = '';
+  hobbyWasDeleted = false;
+
+  onNewHobby() {
+    this.hobbies.push(this.newHobbyInput);
+  }
+  onRemoveHobby(hobby: string) {
+    const position = this.hobbies.indexOf(hobby);
+    this.hobbies.splice(position, 1);
+    this.hobbyWasDeleted = true;
+  }
 }

@@ -1,3 +1,16 @@
+<input type="text" [(ngModel)]="newHobbyInput">
+<button (click)="onNewHobby()">New Hobby</button>
+<p *ngIf="hobbyWasDeleted">Hobby deleted!</p>
+<p
+  [ngStyle]="{color: hobbies.length > 3 ? 'red' : 'black'}"
+  [ngClass]="{'multiple-hobbies': hobbies.length > 3}">Hobbies: {{ hobbies.length }}</p>
+<ul>
+  <app-hobby
+    *ngFor="let hobby of hobbies"
+    [hobbyName]="hobby"
+    (hobbyRemoved)="onHobbyRemoved($event)"></app-hobby>
+</ul>
+
 <!--
   1) Output an array of hobbies (provide some default hobbies)
   2) Add a 'New Hobby' button + <input> field where you add the hobby the user entered to the list
