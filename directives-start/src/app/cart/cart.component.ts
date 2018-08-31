@@ -5,15 +5,10 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent {
   @Input() items = [];
   @Output() itemAdded = new EventEmitter<string>();
   newItem = '';
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   onAddItem() {
     this.itemAdded.emit(this.newItem);
