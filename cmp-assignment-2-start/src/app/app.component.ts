@@ -6,10 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-essentials';
-  rootName = "Shahram1"
-
-  onNameChanged(newName) {
-    this.rootName = newName;
-  }
+  title = 'app';
 }
